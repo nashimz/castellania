@@ -1,0 +1,42 @@
+{
+  "autor": "Leonardo Castellani",
+  "biografia_breve": "Sacerdote, escritor y crítico argentino. Conocido por su agudeza intelectual y su defensa de la Verdad.",
+  "frases": [
+    {
+      "id": 1,
+      "texto": "La paciencia no es la virtud de los que no pueden, sino de los que pueden y se contienen.",
+      "obra": "El Evangelio de Jesucristo",
+      "categoria": "Virtud"
+    },
+    {
+      "id": 2,
+      "texto": "El mundo está lleno de gente que tiene miedo de ser lo que es y de gente que tiene miedo de no ser lo que no es.",
+      "obra": "Las Parábolas de Cristo",
+      "categoria": "Psicología"
+    },
+    {
+      "id": 3,
+      "texto": "Un hombre que no piensa por sí mismo no piensa en absoluto.",
+      "obra": "Crítica Literaria",
+      "categoria": "Filosofía"
+    },
+    {
+      "id": 4,
+      "texto": "La verdad es como el sol. Lo hace ver todo y no se deja mirar.",
+      "obra": "Sentencias y Pensamientos",
+      "categoria": "Verdad"
+    },
+    {
+      "id": 5,
+      "texto": "El que no tiene humor, no tiene humildad; el que no tiene humildad, no tiene sabiduría.",
+      "obra": "Camperas",
+      "categoria": "Humor"
+    },
+    {
+      "id": 6,
+      "texto": "La política ha pasado a ser el arte de evitar que la gente se meta en lo que le importa.",
+      "obra": "Las Canciones de Militis",
+      "categoria": "Política"
+    }
+  ]
+}
