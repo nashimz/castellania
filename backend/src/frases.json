@@ -1,0 +1,46 @@
+{
+  "autor": "Leonardo Castellani",
+  "biografia_breve": "Sacerdote, escritor y crítico argentino. Conocido por su agudeza intelectual y su defensa de la Verdad.",
+  "frases": [
+    {
+      "texto": "La paciencia no es la virtud de los que no pueden, sino de los que pueden y se contienen.",
+      "obra": "El Evangelio de Jesucristo",
+      "categoria": "Virtud"
+    },
+    {
+      "texto": "El mundo está lleno de gente que tiene miedo de ser lo que es y de gente que tiene miedo de no ser lo que no es.",
+      "obra": "Las Parábolas de Cristo",
+      "categoria": "Psicología"
+    },
+    {
+      "texto": "Un hombre que no piensa por sí mismo no piensa en absoluto.",
+      "obra": "Crítica Literaria",
+      "categoria": "Filosofía"
+    },
+    {
+      "texto": "La verdad es como el sol. Lo hace ver todo y no se deja mirar.",
+      "obra": "Sentencias y Pensamientos",
+      "categoria": "Verdad"
+    },
+    {
+      "texto": "El que no tiene humor, no tiene humildad; el que no tiene humildad, no tiene sabiduría.",
+      "obra": "Camperas",
+      "categoria": "Humor"
+    },
+    {
+      "texto": "La política ha pasado a ser el arte de evitar que la gente se meta en lo que le importa.",
+      "obra": "Las Canciones de Militis",
+      "categoria": "Política"
+    },
+    {
+      "texto": "No es lo mismo poner los bienes en común que sean de todos, que tener los bienes en común y que sean de nadie, es decir del Estado, es decir –en nuestros días– de la Fiera.",
+      "obra": "El Apocalipsis de San Juan",
+      "categoria": "Filosofía"
+    },
+    {
+      "texto": "“Nuestras obras buenas o malas van con nosotros, pues ningún acto nuestro pasa, antes permanece en nuestra alma indeleblemente modelándola; y ese moldeo del alma cesa al separarse ella del cuerpo, fijándose en una decisión irrevocable de la voluntad; pues sólo su unión con la materia la hace mudable y versátil en esta vida. De suyo un solo acto de elección acerca del Último Fin fijaría la voluntad para siempre –como pasa en el Ángel– si durante la vida no viésemos nuestro último fin sino como entre brumas. Un profundo análisis psicológico de Santo Tomás, bien conocido, confirma con la razón esta verdad revelada. Hacia dónde cae el árbol, allí para siempre queda. Los que dicen fútilmente: «un solo acto momentáneo no puede merecer un castigo eterno» pasan por alto que lo momentáneo nuestro está conectado con lo eterno: el «Instante» del hombre se hace de una sustancia que no es perecedera, como largamente especuló Soeren Kirkegor.”",
+      "obra": "El Apocalipsis de San Juan",
+      "categoria": "Filosofía"
+    }
+  ]
+}
