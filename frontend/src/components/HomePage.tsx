@@ -12,10 +12,10 @@ function HomePage() {
     >
       {/* Content */}
       <div className="relative z-30 text-right px-12 py-12 mr-20">
-        <h1 className="font-ephesis text-5xl font-bold mb-6 text-right ">
+        <h1 className="font-ephesis  text-5xl font-bold mb-6 text-right">
           Leonardo Castellani
         </h1>
-        <h4 className="font-cascadia text-lg mb-8 max-w-2xl text-right">
+        <h4 className="font-bebas font-semibold text-lg mb-8 max-w-2xl text-right">
           Doctor en psicología, filosofía, teología, sin discusión el más
           importante católico escritor argentino. Y de entre los mejores
           escritores argentinos a secas, sin el “católico”. Incluso tal vez el

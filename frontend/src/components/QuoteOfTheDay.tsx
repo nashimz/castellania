@@ -20,8 +20,8 @@ function QuoteOfTheDay() {
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-semibold mb-2">Frase del Día</h2>
-      <p className="text-white-800 font-bold font-cascadia italic min-h-6">
+      <h2 className="font-bebas text-xl font-semibold mb-2">Frase del Día</h2>
+      <p className="font-bebas text-white-800 font-semibold  min-h-6">
         {displayedText}
         {displayedText.length < fullText.length && (
           <span className="animate-pulse">|</span>
