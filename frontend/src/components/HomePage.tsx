@@ -20,7 +20,7 @@ function HomePage() {
           importante católico escritor argentino. Y de entre los mejores
           escritores argentinos a secas, sin el “católico”. Incluso tal vez el
           mejor de todos.
-        </h3>
+        </h4>
         <QuoteOfTheDay />
       </div>
     </div>
