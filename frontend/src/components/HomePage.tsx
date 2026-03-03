@@ -4,7 +4,7 @@ import QuoteOfTheDay from "./QuoteOfTheDay";
 function HomePage() {
   return (
     <div
-      className="min-h-screen flex items-center justify-end text-white relative bg-cover before:absolute before:inset-0 before:bg-black/50 before:z-0"
+      className="min-h-screen flex items-center justify-center md:justify-end text-white relative bg-cover before:absolute before:inset-0 before:bg-black/50 before:z-0"
       style={{
         backgroundImage: `url(${castellaniImg})`,
         backgroundPosition: "center -10px",
@@ -20,7 +20,7 @@ function HomePage() {
           importante católico escritor argentino. Y de entre los mejores
           escritores argentinos a secas, sin el “católico”. Incluso tal vez el
           mejor de todos.
-        </h4>
+        </h3>
         <QuoteOfTheDay />
       </div>
     </div>
