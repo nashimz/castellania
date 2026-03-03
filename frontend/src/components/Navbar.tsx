@@ -8,12 +8,6 @@ function Navbar() {
       <div className="font-ephesis fixed top-4 left-4 text-4xl sm:text-5xl font-bold text-white z-[60] flex items-center h-14 px-4 ">
         Castellania
       </div>
-<<<<<<< Updated upstream
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-black/10 text-white px-16 py-4 z-50 rounded-3xl shadow-sm min-w-fit">
-        <div className="flex items-center justify-center gap-16">
-          <div className="flex gap-10">
-            <a href="/" className="hover:text-gray-300 transition">
-=======
 
       {/* Mobile Menu Button */}
       <button
@@ -53,7 +47,6 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
               className="hover:text-gray-300 transition text-3xl md:text-xl"
             >
->>>>>>> Stashed changes
               Inicio
             </a>
             <a
