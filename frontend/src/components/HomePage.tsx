@@ -4,23 +4,31 @@ import QuoteOfTheDay from "./QuoteOfTheDay";
 function HomePage() {
   return (
     <div
-      className="min-h-screen flex items-center justify-end text-white relative bg-cover before:absolute before:inset-0 before:bg-black/50 before:z-0"
+      className="min-h-screen flex items-center justify-center md:justify-end text-white relative bg-cover before:absolute before:inset-0 before:bg-black/50 before:z-0"
       style={{
         backgroundImage: `url(${castellaniImg})`,
         backgroundPosition: "center -10px",
       }}
     >
       {/* Content */}
+<<<<<<< Updated upstream
       <div className="relative z-30 text-right px-12 py-12 mr-20">
         <h1 className="font-ephesis text-5xl font-bold mb-6 text-right ">
           Leonardo Castellani
         </h1>
         <h4 className="font-cascadia text-lg mb-8 max-w-2xl text-right">
+=======
+      <div className="relative z-30 text-center md:text-right px-6 md:px-12 py-12 md:mr-20 max-w-4xl">
+        <h1 className="font-ephesis text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+          Leonardo Castellani
+        </h1>
+        <h3 className="font-bebas font-semibold text-lg sm:text-xl md:text-2xl mb-8 text-balance">
+>>>>>>> Stashed changes
           Doctor en psicología, filosofía, teología, sin discusión el más
           importante católico escritor argentino. Y de entre los mejores
           escritores argentinos a secas, sin el “católico”. Incluso tal vez el
           mejor de todos.
-        </h4>
+        </h3>
         <QuoteOfTheDay />
       </div>
     </div>
