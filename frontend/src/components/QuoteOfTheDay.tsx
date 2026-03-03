@@ -19,11 +19,9 @@ function QuoteOfTheDay() {
   }, []);
 
   return (
-    <div className="p-0 md:p-4">
-      <h2 className="font-bebas text-xl sm:text-2xl font-semibold mb-3">
-        Frase del Día
-      </h2>
-      <p className="font-bebas text-white font-semibold min-h-6 text-xl sm:text-2xl">
+    <div className="p-4">
+      <h2 className="font-bebas text-xl font-semibold mb-2">Frase del Día</h2>
+      <p className="font-bebas text-white-800 font-semibold  min-h-6">
         {displayedText}
         {displayedText.length < fullText.length && (
           <span className="animate-pulse">|</span>
