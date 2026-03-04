@@ -39,14 +39,27 @@ router.post("/", async (req: Request, res: Response) => {
   }
 });
 
-// Obtener frase aleatoria
+// Obtener frase del día (determinística por fecha)
 router.get("/random", async (req: Request, res: Response) => {
   try {
     const count = await Phrase.countDocuments();
-    const randomIdx = Math.floor(Math.random() * count);
-    const randomPhrase = await Phrase.findOne()
+    if (count === 0) {
+      return res.status(404).json({ error: "No hay frases disponibles" });
+    }
+
+    // Usar la fecha actual para generar una semilla (días desde Unix Epoch)
+    const now = new Date();
+    const daySeed = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
+    const randomIdx = daySeed % count;
+
+    const phrases = await Phrase.find()
+      .sort({ _id: 1 })
       .skip(randomIdx)
+      .limit(1)
       .populate("author", "name bio");
+    
+    const randomPhrase = phrases[0];
+
     res.json(randomPhrase);
   } catch (error) {
     res.status(500).json({ error: "Error obteniendo frase aleatoria" });
