@@ -21,3 +21,11 @@ export const getPhraseOfTheDay = async (): Promise<Phrase> => {
   }
   return response.json();
 };
+
+export const getAllPhrases = async (): Promise<Phrase[]> => {
+  const response = await fetch(API_URL);
+  if (!response.ok) {
+    throw new Error("Error al obtener todas las frases");
+  }
+  return response.json();
+};

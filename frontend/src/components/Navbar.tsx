@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div className="font-ephesis fixed top-4 left-4 text-4xl sm:text-5xl font-bold text-white z-[60] flex items-center h-14 px-4 ">
+      <Link to="/" className="font-ephesis fixed top-4 left-4 text-4xl sm:text-5xl font-bold text-white z-[60] flex items-center h-14 px-4 ">
         Castellania
-      </div>
+      </Link>
 
       {/* Mobile Menu Button */}
       <button
@@ -42,34 +43,34 @@ function Navbar() {
       >
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
           <div className="flex flex-col md:flex-row gap-10">
-            <a
-              href="/"
+            <Link
+              to="/"
               onClick={() => setIsOpen(false)}
               className="hover:text-gray-300 transition text-3xl md:text-xl"
             >
               Inicio
-            </a>
-            <a
-              href="/biography"
+            </Link>
+            <Link
+              to="/biography"
               onClick={() => setIsOpen(false)}
               className="hover:text-gray-300 transition text-3xl md:text-xl"
             >
               Biografía
-            </a>
-            <a
-              href="/works"
+            </Link>
+            <Link
+              to="/works"
               onClick={() => setIsOpen(false)}
               className="hover:text-gray-300 transition text-3xl md:text-xl"
             >
               Obras
-            </a>
-            <a
-              href="/phrases"
+            </Link>
+            <Link
+              to="/frases"
               onClick={() => setIsOpen(false)}
               className="hover:text-gray-300 transition text-3xl md:text-xl"
             >
               Frases
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
