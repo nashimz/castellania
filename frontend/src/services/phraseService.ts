@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/api/frases";
+const API_URL = "http://localhost:3002/api/frases";
 
 export interface Author {
   _id: string;

@@ -6,7 +6,7 @@ import { connectDB } from "./config/database.js";
 import phraseRoutes from "./routes/phrase.js";
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3002;
 
 // Connect to DB
 connectDB();

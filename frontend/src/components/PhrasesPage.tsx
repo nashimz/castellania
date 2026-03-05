@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllPhrases } from "../services/phraseService";
 import type { Phrase } from "../services/phraseService";
 import PhraseCard from "./PhraseCard";
-import castellaniImg from "../assets/castellania.png";
+
 
 function PhrasesPage() {
   const [phrases, setPhrases] = useState<Phrase[]>([]);
@@ -43,11 +43,8 @@ function PhrasesPage() {
 
   return (
     <div 
-      className="min-h-screen bg-fixed bg-cover relative before:absolute before:inset-0 before:bg-black/70 before:z-0"
-      style={{
-        backgroundImage: `url(${castellaniImg})`,
-        backgroundPosition: "center",
-      }}
+      className="bg-black min-h-screen bg-fixed bg-cover relative before:absolute before:inset-0 before:bg-black/70 before:z-0"
+      
     >
       <div className="relative z-10 pt-32 pb-20 px-6 max-w-6xl mx-auto">
         <header className="mb-12 text-center">
