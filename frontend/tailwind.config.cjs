@@ -11,6 +11,7 @@ module.exports = {
         lobster: ['"Lobster"', "cursive"],
         bebas: ['"Bebas Neue"', "cursive"],
         chakra: ['"Chakra Petch"', "sans-serif"],
+        lato: ['"Lato"', "sans-serif"],
       },
     },
   },

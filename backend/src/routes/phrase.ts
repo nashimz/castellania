@@ -1,16 +1,60 @@
+import mongoose from "mongoose";
 import { Router, Request, Response } from "express";
 import Phrase from "../models/Phrase.js";
 import Author from "../models/Author.js";
 
 const router = Router();
 
-// Obtener todas las frases
+// Ruta GET única (soporta todas, random e ID vía query)
 router.get("/", async (req: Request, res: Response) => {
+  // Intentar obtener el ID de varias formas por si acaso
+  const idValue = req.query.id || req.query.ID || req.query._id;
+  
+  console.log("--- GET /api/frases ---");
+  console.log("Query Params:", JSON.stringify(req.query));
+  console.log("Detected ID:", idValue);
+
   try {
+    // 1. Caso: Obtener por ID vía query (?id=...)
+    if (idValue && typeof idValue === "string") {
+      if (!mongoose.Types.ObjectId.isValid(idValue)) {
+        console.log("Invalid ID format:", idValue);
+        return res.status(400).json({ error: "Formato de ID inválido" });
+      }
+      const phrase = await Phrase.findById(idValue).populate("author", "name bio");
+      if (!phrase) {
+        console.log("Phrase not found for ID:", idValue);
+        return res.status(404).json({ error: "Frase no encontrada" });
+      }
+      console.log("Found phrase, returning single object.");
+      return res.json(phrase);
+    }
+
+    // 2. Caso: Obtener todas
     const phrases = await Phrase.find().populate("author", "name bio");
-    res.json(phrases);
+    return res.json(phrases);
   } catch (error) {
-    res.status(500).json({ error: "Error obteniendo frases" });
+    console.error("Error in GET /api/frases:", error);
+    return res.status(500).json({ error: "Error en el servidor" });
+  }
+});
+
+// Mantener random separado o integrarlo (lo dejamos separado con path limpio)
+router.get("/random", async (_req: Request, res: Response) => {
+  try {
+    const count = await Phrase.countDocuments();
+    if (count === 0) return res.status(404).json({ error: "No hay frases" });
+
+    const daySeed = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+    const phrase = await Phrase.find()
+      .sort({ _id: 1 })
+      .skip(daySeed % count)
+      .limit(1)
+      .populate("author", "name bio");
+    
+    return res.json(phrase[0]);
+  } catch (error) {
+    return res.status(500).json({ error: "Error en frase aleatoria" });
   }
 });
 
@@ -39,30 +83,22 @@ router.post("/", async (req: Request, res: Response) => {
   }
 });
 
-// Obtener frase del día (determinística por fecha)
-router.get("/random", async (req: Request, res: Response) => {
+// Eliminar una frase
+router.delete("/", async (req: Request, res: Response) => {
+  const { id } = req.query; // Usamos query para consistencia con GET
+
+  if (!id || typeof id !== "string" || !mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "ID no proporcionado o formato inválido" });
+  }
+
   try {
-    const count = await Phrase.countDocuments();
-    if (count === 0) {
-      return res.status(404).json({ error: "No hay frases disponibles" });
+    const phrase = await Phrase.findByIdAndDelete(id);
+    if (!phrase) {
+      return res.status(404).json({ error: "Frase no encontrada" });
     }
-
-    // Usar la fecha actual para generar una semilla (días desde Unix Epoch)
-    const now = new Date();
-    const daySeed = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
-    const randomIdx = daySeed % count;
-
-    const phrases = await Phrase.find()
-      .sort({ _id: 1 })
-      .skip(randomIdx)
-      .limit(1)
-      .populate("author", "name bio");
-    
-    const randomPhrase = phrases[0];
-
-    res.json(randomPhrase);
+    res.json({ message: "Frase eliminada correctamente", phrase });
   } catch (error) {
-    res.status(500).json({ error: "Error obteniendo frase aleatoria" });
+    res.status(500).json({ error: "Error eliminando la frase" });
   }
 });
 
